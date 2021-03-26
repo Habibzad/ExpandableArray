@@ -53,7 +53,7 @@ public class ExpandableArray {
             temp[i] = arr[i];
         }
         arr = temp;
-        capacity = index + 1;
+        capacity = index + 5;
     }
 
     // Get array size
