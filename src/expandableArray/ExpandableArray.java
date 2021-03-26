@@ -8,14 +8,14 @@ public class ExpandableArray {
 
     // Instance variables
     private Object[] arr;
-    
+    private int capacity;
 
     /**
     * Creates a new expandable array with no elements.
     */
     public ExpandableArray() {
         arr = new Object[5];
-        
+        capacity = 2;
     }
 
     /**
@@ -24,7 +24,11 @@ public class ExpandableArray {
     * element, the implementation expands the array to make room.
     */
     public void set(int index, Object value) {
-    	//implementation here
+    	// If index bigger than array length, increase the capacity of the array
+        if (index >= arr.length) { 
+            increaseCapacity(index);
+        }
+        arr[index] = value;
     }
 
     /**
@@ -42,5 +46,25 @@ public class ExpandableArray {
 
     }
 
-   
+    // Increase capacity
+    public void increaseCapacity(int index) {
+        Object temp[] = new Object[index + 5];
+        for (int i = 0; i < capacity; i++) {
+            temp[i] = arr[i];
+        }
+        arr = temp;
+        capacity = index + 1;
+    }
+
+    // Get array size
+    public int size() {
+        return arr.length;
+    }
+    
+    //Print elements
+    public void printElements() {
+    	for(Object ob:arr) {
+    		System.out.println(ob);
+    	}
+    }
 }
