@@ -38,7 +38,7 @@ public class ExpandableArray {
     * the array, the return value is simply null.
     */
     public Object get(int index) {
-        if (index > arr.length - 1) {
+        if (index > arr.length - 1 || index<0) {
             System.out.println("Index does not exist");
             return -1;
         }
