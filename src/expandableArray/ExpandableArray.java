@@ -11,11 +11,11 @@ public class ExpandableArray {
     private int capacity;
 
     /**
-    * Creates a new expandable array with no elements.
+    * Creates a new expandable array with initial value of 5 with no elements.
     */
     public ExpandableArray() {
-        arr = new Object[5];
-        capacity = 2;
+    	capacity = 5;
+        arr = new Object[capacity];
     }
 
     /**
